@@ -1,0 +1,7 @@
+[user]
+	name = Edwin Steele
+	email = edwin-lists@wordspeak.org
+[core]
+	autocrlf = input
+[push]
+	default = current
