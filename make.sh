@@ -8,7 +8,7 @@
 
 dir=~/Code/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="tmux.conf vimrc vimrc_python"
+files="tmux.conf vimrc vimrc_python gitconfig"
 
 ##########
 
