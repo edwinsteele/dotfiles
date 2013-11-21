@@ -1,3 +1,16 @@
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" rst bundle
+Bundle 'Rykka/riv.vim'
+
+filetype plugin indent on     " required!
+
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set syntax=python
 autocmd BufRead,BufNewFile *.py set smartindent
@@ -6,7 +19,10 @@ autocmd BufRead,BufNewFile *.py set tabstop=4
 autocmd BufRead,BufNewFile *.py set shiftwidth=4
 autocmd BufRead,BufNewFile *.py set expandtab
 "autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-au BufRead,BufNewFile *.rst set wrap textwidth=78
+
+" Restructured Text
+"au BufRead,BufNewFile *.rst set nowrap textwidth=78
+"au BufRead,BufNewFile *.rst set syntax=rst
 
 autocmd BufRead,BufNewFile *.sql set syntax=sql
 "autocmd FileType  set tabstop=2|set shiftwidth=2|set noexpandtab
@@ -20,6 +36,3 @@ map :let &background = ( &background == "dark"? "light" : "dark" )
 set ruler
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 syn on
-
-"source ~/.vimrc_python
-"source ~/.vim/indent_guides.vim
