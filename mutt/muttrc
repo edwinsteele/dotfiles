@@ -34,7 +34,7 @@ color sidebar_new yellow default
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_format = "/Users/esteele/.mutt/mutt_postponed_status_format.sh '───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───( _ outbound messages queued )───%>─%?p?( %p postponed )?───'|"
 
 # Header Options -------------------------------------
 ignore *                                # ignore all headers
@@ -88,10 +88,11 @@ bind index <space>  collapse-thread
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index Y "<shell-escape>/Users/esteele/.mutt/msmtp-queue -r<enter>"        "send queued email"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Sidebar Navigation ---------------------------------
 bind index,pager <down>   sidebar-next
@@ -104,12 +105,14 @@ bind index,pager <right>  sidebar-open
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
 set pager_context = 3      # number of context lines to show
+set pager_format="%S [%C/%T] %n (%l) %s"
 #set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
 set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings ---------------------------------
@@ -144,10 +147,16 @@ set reply_self			     # reply to recipients in a message sent by me
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
-set editor = "vim"        # Use terminal Vim to compose email.
+set editor = "vim '+/^$'"            # Use terminal Vim to compose email. Start after the first empty line (i.e. right after the header)
 
-set sendmail = "/usr/local/bin/msmtp -a edwinsteele"
-set sendmail_wait = 0
+# Synchronous. Assumes that you are online
+#set sendmail = "/usr/local/bin/msmtp -a edwinsteele"
+#set sendmail_wait = 0
+
+# Queue if necessary
+set sendmail = "/Users/esteele/.mutt/msmtpq"
+set sendmail_wait = -1
+
 set record = +edwin-wordspeak.org/INBOX.Sent\ Items
 
 bind compose p postpone-message
