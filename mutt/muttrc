@@ -56,6 +56,7 @@ mailboxes +edwin-wordspeak.org/INBOX \
           +edwin-wordspeak.org/INBOX.Sent\ Items \
           +edwin-wordspeak.org/INBOX.Lists \
           +edwin-wordspeak.org/INBOX.Nikola \
+          +edwin-wordspeak.org/INBOX.Mutt \
           +edwin-wordspeak.org/INBOX.Junk\ Mail \
           +edwin-wordspeak.org/INBOX.IsSpam \
           +edwin-wordspeak.org/INBOX.NotSpam \
