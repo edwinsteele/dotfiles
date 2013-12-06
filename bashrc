@@ -6,9 +6,9 @@ if [ "x" == "x`ps -x -u ${USER} | egrep [s]sh-agent`" ] ; then
 fi
 source ${HOME}/bin/agent-env
 
-#if [ $BASH -a -f `brew --prefix`/etc/bash_completion ]; then
-#	. `brew --prefix`/etc/bash_completion
-#fi
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+	. `brew --prefix`/etc/bash_completion
+fi
 
 PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 export PATH
