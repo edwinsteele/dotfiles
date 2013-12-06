@@ -4,7 +4,7 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
 # Start ssh-agent if it is not already running and set up ssh-agent variables
-if [ "x" == "x`ps -x -u ${USER} | egrep [s]sh-agent`" ] ; then 
+if [ "x" = "x`ps -x -u ${USER} | egrep '[s]sh-agent'`" ] ; then 
   # no ssh-agent running"
   ssh-agent | sed -e "/^echo/d" > ${HOME}/bin/agent-env
 fi
