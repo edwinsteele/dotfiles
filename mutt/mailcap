@@ -8,6 +8,10 @@ image/pjpeg; ~/.mutt/view_attachment.sh %s jpg
 image/png; ~/.mutt/view_attachment.sh %s png
 image/gif; ~/.mutt/view_attachment.sh %s gif
 
+# Audio
+#audio/x-wav; ~/.mutt/view_attachment.sh %s wav
+audio/x-wav; /Applications/VLC.app/Contents/MacOS/VLC '%s'; nametemplate=%s.wav; needsterminal; description="WAV Audio"
+
 # PDFs
 application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
