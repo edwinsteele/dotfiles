@@ -21,6 +21,7 @@ pjson () {
 }
 
 alias muttman="elinks /usr/local/opt/mutt/share/doc/mutt/manual.html"
+alias vi="vim"  # Avoid system vi when I don't type the "m"
 
 export LANG=en_AU.UTF-8
 
