@@ -10,12 +10,12 @@ if [ "x" = "x`ps -x -u ${USER} | egrep '[s]sh-agent'`" ] ; then
 fi
 source ${HOME}/bin/agent-env
 
-PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-export PATH
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
+export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
+export PATH="/Users/esteele/Library/Python/2.7/bin/:$PATH"
 
 source /Users/esteele/.virtualenvs/venv_profile_additions_2.7.sh
 
-export PATH=$PATH:/Users/esteele/Library/Python/2.7/bin/
 pjson () {
         python -c "import json; import sys; print json.dumps(json.loads(sys.stdin.read()), sort_keys = True, indent = 2)"
 }
@@ -82,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
