@@ -66,7 +66,6 @@ mailboxes +edwin-wordspeak.org/INBOX \
           +edwin-wordspeak.org/INBOX.Technical \
 
 # Other special folders.
-#set mbox      = "+edwin-wordspeak.org/archive"
 set postponed = "+edwin-wordspeak.org/INBOX.Drafts"
 
 # Index View Options ---------------------------------
@@ -94,6 +93,8 @@ macro index Y "<shell-escape>/Users/esteele/.mutt/msmtp-queue -r<enter>"        
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index,pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager A "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><save-message>+edwin-wordspeak.org/INBOX.Archive<enter>" "move message to Archive"
+macro index,pager S "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><save-message>+edwin-wordspeak.org/INBOX.IsSpam<enter>" "move message to IsSpam"
 
 # Sidebar Navigation ---------------------------------
 bind index,pager <down>   sidebar-next
