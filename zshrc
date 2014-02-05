@@ -97,3 +97,5 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Oh dear, why wasn't allowing comments set to be the default?
+setopt interactivecomments
