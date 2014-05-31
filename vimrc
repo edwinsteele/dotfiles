@@ -1,15 +1,23 @@
+# This assumes that we are using a version of vim that has lots of
+#  options turned on. vim-minimal in RHEL isn't sufficient, use vim-enhanced
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+# Vundle start
+set nocompatible    				" vundle: be IMproved - required
+filetype off					" vundle: required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " rst bundle
 Bundle 'Rykka/riv.vim'
 
-filetype plugin indent on     " required!
+call vundle#end()
+filetype plugin indent on     			" vundle: required!
+# Vundle end
 
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set syntax=python
