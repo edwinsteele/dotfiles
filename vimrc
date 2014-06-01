@@ -1,7 +1,7 @@
-# This assumes that we are using a version of vim that has lots of
-#  options turned on. vim-minimal in RHEL isn't sufficient, use vim-enhanced
+" This assumes that we are using a version of vim that has lots of
+"  options turned on. vim-minimal in RHEL isn't sufficient, use vim-enhanced
 
-# Vundle start
+" Vundle start
 set nocompatible    				" vundle: be IMproved - required
 filetype off					" vundle: required
 
@@ -17,7 +17,7 @@ Bundle 'Rykka/riv.vim'
 
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
-# Vundle end
+" Vundle end
 
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set syntax=python
