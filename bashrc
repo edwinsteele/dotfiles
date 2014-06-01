@@ -22,5 +22,7 @@ pjson () {
 alias muttman="elinks /usr/local/opt/mutt/share/doc/mutt/manual.html"
 
 export LANG=en_AU.UTF-8
+# Use vim enhanced
+alias vi=vim
 
 source ~/.profile_private
