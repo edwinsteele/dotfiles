@@ -15,6 +15,10 @@ Bundle 'gmarik/Vundle.vim'
 " rst bundle
 Bundle 'Rykka/riv.vim'
 
+" markdown bundle
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
 " Vundle end
