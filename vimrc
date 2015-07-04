@@ -32,6 +32,13 @@ autocmd BufRead,BufNewFile *.py set shiftwidth=4
 autocmd BufRead,BufNewFile *.py set expandtab
 "autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
+autocmd BufRead,BufNewFile *.yml syntax on
+autocmd BufRead,BufNewFile *.yml set syntax=yaml
+autocmd BufRead,BufNewFile *.yml set nosmartindent
+autocmd BufRead,BufNewFile *.yml set noautoindent
+autocmd BufRead,BufNewFile *.yml set inde=""
+autocmd BufRead,BufNewFile *.yml set expandtab
+
 " Restructured Text
 "au BufRead,BufNewFile *.rst set nowrap textwidth=78
 "au BufRead,BufNewFile *.rst set syntax=rst
