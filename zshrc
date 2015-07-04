@@ -12,7 +12,6 @@ source ${HOME}/bin/agent-env
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
-export PATH="/Users/esteele/Library/Python/2.7/bin/:$PATH"
 
 source /Users/esteele/.virtualenvs/venv_profile_additions_2.7.sh
 
@@ -22,6 +21,9 @@ pjson () {
 
 alias muttman="elinks /usr/local/opt/mutt/share/doc/mutt/manual.html"
 alias vi="vim"  # Avoid system vi when I don't type the "m"
+rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
+ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
+yhighlight() { gsed 's,\('$1'\),\x1B[43m\1\x1B[0m,' }
 
 export LANG=en_AU.UTF-8
 
