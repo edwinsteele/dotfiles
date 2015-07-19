@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
@@ -8,7 +8,7 @@
 
 dir=~/Code/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vim tmux.conf vimrc vimrc_python gitconfig zshrc bashrc pylintrc offlineimaprc urlview"
+files="vim tmux.conf vimrc vimrc_python gitconfig zshrc bashrc pylintrc offlineimaprc urlview notmuch-config"
 
 ##########
 
