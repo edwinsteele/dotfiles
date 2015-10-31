@@ -12,9 +12,6 @@ call vundle#begin()
 " required! 
 Bundle 'gmarik/Vundle.vim'
 
-" rst bundle
-Bundle 'Rykka/riv.vim'
-
 " markdown bundle
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -38,10 +35,6 @@ autocmd BufRead,BufNewFile *.yml set nosmartindent
 autocmd BufRead,BufNewFile *.yml set noautoindent
 autocmd BufRead,BufNewFile *.yml set inde=""
 autocmd BufRead,BufNewFile *.yml set expandtab
-
-" Restructured Text
-"au BufRead,BufNewFile *.rst set nowrap textwidth=78
-"au BufRead,BufNewFile *.rst set syntax=rst
 
 autocmd BufRead,BufNewFile *.sql set syntax=sql
 "autocmd FileType  set tabstop=2|set shiftwidth=2|set noexpandtab
