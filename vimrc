@@ -15,19 +15,64 @@ Bundle 'gmarik/Vundle.vim'
 " markdown bundle
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" python folding
+Plugin 'tmhedberg/SimpylFold'
+" PEP8 friendly auto-indentation
+Plugin 'vim-scripts/indentpython.vim'
+" Auto-complete
+Bundle 'Valloric/YouCompleteMe'
+" Syntax check on each save
+Plugin 'scrooloose/syntastic'
+" PEP8 checking - check with F7
+Plugin 'nvie/vim-flake8'
+" Zenburn colour scheme
+Plugin 'jnurmine/Zenburn'
+" Airline... not powerline
+Plugin 'bling/vim-airline'
+" Tagbar
+Plugin 'majutsusi/tagbar'
 
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
 " Vundle end
 
-autocmd BufRead,BufNewFile *.py syntax on
-autocmd BufRead,BufNewFile *.py set syntax=python
-autocmd BufRead,BufNewFile *.py set smartindent
-autocmd BufRead,BufNewFile *.py set cinwords=class,def,elif,else,except,finally,for,if,try,while
-autocmd BufRead,BufNewFile *.py set tabstop=4
-autocmd BufRead,BufNewFile *.py set shiftwidth=4
-autocmd BufRead,BufNewFile *.py set expandtab
-"autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+colorscheme Zenburn
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" PEP8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+" define BadWhitespace before using in a match
+highlight BadWhitespace ctermfg=red ctermbg=red cterm=bold
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
 
 autocmd BufRead,BufNewFile *.yml syntax on
 autocmd BufRead,BufNewFile *.yml set syntax=yaml
@@ -37,14 +82,31 @@ autocmd BufRead,BufNewFile *.yml set inde=""
 autocmd BufRead,BufNewFile *.yml set expandtab
 
 autocmd BufRead,BufNewFile *.sql set syntax=sql
-"autocmd FileType  set tabstop=2|set shiftwidth=2|set noexpandtab
-autocmd FileType recipe set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType js set tabstop=2|set shiftwidth=2|set expandtab
-set background=dark
+
+set encoding=utf-8
+" Close auto-complete window when I'm done with it
+let g:ycm_autoclose_preview_window_after_completion=1
+" Goto definition
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 set hlsearch
-map :let &background = ( &background == "dark"? "light" : "dark" )
-"set nu
 set ruler
+
+" Show line numbers, with custom colouring
+set nu
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-syn on
+
+let python_highlight_all=1
+syntax on
+
+" Always show statusline, even without a split
+set laststatus=2
+" Tell Vim to use the system clipboard
+set clipboard=unnamed
+
+" Use the brew installed ctags, not the one shipped with OSX
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+" Make it easy to toggle the tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width=40
+let g:tagbar_left=1
