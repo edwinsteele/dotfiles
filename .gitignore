@@ -1,4 +1,5 @@
 *.pyc
+python_hue
 offlineimaprc
 *.cert
 *.crt
