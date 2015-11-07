@@ -120,3 +120,6 @@ endif
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width=40
 let g:tagbar_left=1
+" Make it easy to paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
