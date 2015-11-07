@@ -11,10 +11,9 @@ filetype off					" vundle: required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
+" let Vundle manage Vundle - this is required
 " To bootstrap, do:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" required! 
 Bundle 'gmarik/Vundle.vim'
 
 " markdown bundle
@@ -109,8 +108,14 @@ set laststatus=2
 " Tell Vim to use the system clipboard
 set clipboard=unnamed
 
-" Use the brew installed ctags, not the one shipped with OSX
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let uname=system("uname")
+if uname =~ "Darwin"
+	" Use the brew installed ctags, not the one shipped with OSX
+	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+else
+	" Use the regular ctags
+	let g:tagbar_ctags_bin='/usr/bin/ctags'
+endif
 " Make it easy to toggle the tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width=40
