@@ -35,7 +35,7 @@ Plugin 'jnurmine/Zenburn'
 " Airline... not powerline
 Plugin 'bling/vim-airline'
 " Tagbar
-Plugin 'majutsusi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
