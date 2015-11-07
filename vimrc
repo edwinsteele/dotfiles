@@ -12,6 +12,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
+" To bootstrap, do:
+" git clone https://github.com/VundleVim/Vundle.vim.git
 " required! 
 Bundle 'gmarik/Vundle.vim'
 
