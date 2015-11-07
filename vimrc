@@ -13,7 +13,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " To bootstrap, do:
-" git clone https://github.com/VundleVim/Vundle.vim.git
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " required! 
 Bundle 'gmarik/Vundle.vim'
 
