@@ -1,6 +1,9 @@
 " This assumes that we are using a version of vim that has lots of
 "  options turned on. vim-minimal in RHEL isn't sufficient, use vim-enhanced
 
+" Set to 256 colour mode
+set t_Co=256
+
 " Vundle start
 set nocompatible    				" vundle: be IMproved - required
 filetype off					" vundle: required
@@ -36,7 +39,7 @@ call vundle#end()
 filetype plugin indent on     			" vundle: required!
 " Vundle end
 
-colorscheme Zenburn
+colorscheme zenburn
 
 " Enable folding
 set foldmethod=indent
