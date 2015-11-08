@@ -173,3 +173,7 @@ bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
 macro index / "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch.py -G ~/.mutt_storage/cache/Search<enter><change-folder-readonly>~/.mutt_storage/cache/Search<enter>" \
         "search mail (using notmuch)"
+
+# Colour highlighting
+# Valuable OpenBSD contributors
+color index cyan default '~f "(@cvs.openbsd.org|@openbsd.org|tedunangst.com|Todd.Miller@courtesan.com|chris@nmedia.net|stu@spacehopper.org|schwarze@usta.de|otto@drijf.net|ajacoutot@bsdfrog.org|beck@obtuse.com|djm@mindrot.org|kwesterback@gmail.com)"'
