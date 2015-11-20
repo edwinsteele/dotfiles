@@ -35,6 +35,10 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'bling/vim-airline'
 " Tagbar
 Plugin 'majutsushi/tagbar'
+" HTML5 + inline SVG omnicomplete function, indent and syntax for Vim. Based
+" on the default htmlcomplete.vim.
+Plugin 'othree/html5.vim'
+Plugin 'skammer/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
@@ -123,3 +127,5 @@ let g:tagbar_left=1
 " Make it easy to paste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
