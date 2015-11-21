@@ -1,6 +1,12 @@
 " This assumes that we are using a version of vim that has lots of
 "  options turned on. vim-minimal in RHEL isn't sufficient, use vim-enhanced
 
+" Keyboard shortcut reminders...
+"
+" ctrl-w + arrow => move between panes, including tagbar panes
+" :vs => split vertically
+" :sv => split horizontally
+"
 " Set to 256 colour mode
 set t_Co=256
 
@@ -129,3 +135,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
+
+" troubleshooting ycmd
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
