@@ -2,7 +2,7 @@ vim/bundle
 *.pyc
 .DS_Store
 python_hue
-.netrwhist
+*.netrwhist
 offlineimaprc
 *.cert
 *.crt
