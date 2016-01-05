@@ -163,7 +163,7 @@ bind compose p postpone-message
 bind index p recall-message
 
 # Contacts
-set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+set query_command = "/Users/esteele/.mutt/icloud-addressbook-query.py '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
@@ -176,4 +176,4 @@ macro index / "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-no
 
 # Colour highlighting
 # Valuable OpenBSD contributors
-color index cyan default '~f "(@cvs.openbsd.org|@openbsd.org|tedunangst.com|Todd.Miller@courtesan.com|chris@nmedia.net|stu@spacehopper.org|schwarze@usta.de|otto@drijf.net|ajacoutot@bsdfrog.org|beck@obtuse.com|djm@mindrot.org|kwesterback@gmail.com|miod@online.fr)"'
+color index cyan default '~f "(@cvs.openbsd.org|@openbsd.org|tedunangst.com|Todd.Miller@courtesan.com|chris@nmedia.net|stu@spacehopper.org|schwarze@usta.de|otto@drijf.net|ajacoutot@bsdfrog.org|beck@obtuse.com|djm@mindrot.org|kwesterback@gmail.com|miod@online.fr|nick@holland-consulting.net|nicholas.marriott@gmail.com|alexander.bluhm@gmx.net|mlarkin@azathoth.net|stsp@stsp.name)"'
