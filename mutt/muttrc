@@ -176,4 +176,4 @@ macro index / "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-no
 
 # Colour highlighting
 # Valuable OpenBSD contributors
-color index cyan default '~f "(@cvs.openbsd.org|@openbsd.org|tedunangst.com|Todd.Miller@courtesan.com|chris@nmedia.net|stu@spacehopper.org|schwarze@usta.de|otto@drijf.net|ajacoutot@bsdfrog.org|beck@obtuse.com|djm@mindrot.org|kwesterback@gmail.com|miod@online.fr|nick@holland-consulting.net|nicholas.marriott@gmail.com|alexander.bluhm@gmx.net|mlarkin@azathoth.net|stsp@stsp.name)"'
+color index cyan default '~f "(@cvs.openbsd.org|@openbsd.org|tedunangst.com|Todd.Miller@courtesan.com|chris@nmedia.net|stu@spacehopper.org|schwarze@usta.de|otto@drijf.net|ajacoutot@bsdfrog.org|beck@obtuse.com|djm@mindrot.org|kwesterback@gmail.com|miod@online.fr|nick@holland-consulting.net|nicholas.marriott@gmail.com|alexander.bluhm@gmx.net|mlarkin@azathoth.net|mark.kettenis@xs4all.nl|stsp@stsp.name)"'
