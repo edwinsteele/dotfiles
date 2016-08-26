@@ -16,7 +16,7 @@ source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 set wait_key = no        # shut up, mutt
 set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
-set mail_check = 0       # minimum time between scans
+set mail_check_stats = yes  # calculate message stats when polling
 set move = no            # Don't move read mail to mbox
 set delete               # don't ask, just do
 unset confirmappend      # don't ask, just do!
@@ -25,10 +25,12 @@ unset mark_old           # read/new is good enough for me
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 
-# Sidebar Patch --------------------------------------
-set sidebar_delim   = ' │'
+# Sidebar --------------------------------------------
+set sidebar_short_path = yes
 set sidebar_visible = yes
-set sidebar_width   = 32
+set sidebar_width   = 20
+set sidebar_format = "%B%* %N/%S"
+set sidebar_sort_method = alpha
 color sidebar_new yellow default
 
 # Status Bar -----------------------------------------
