@@ -45,6 +45,9 @@ Plugin 'majutsushi/tagbar'
 " on the default htmlcomplete.vim.
 Plugin 'othree/html5.vim'
 Plugin 'skammer/vim-css-color'
+" Terraform stuff
+Plugin 'hashivim/vim-terraform'
+
 
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
