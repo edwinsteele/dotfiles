@@ -3,5 +3,6 @@
 	email = edwin-lists@wordspeak.org
 [core]
 	autocrlf = input
+	editor = /usr/bin/vim
 [push]
 	default = current
