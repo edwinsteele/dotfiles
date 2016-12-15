@@ -57,9 +57,9 @@ mailboxes +edwin-wordspeak.org/INBOX \
           +edwin-wordspeak.org/INBOX.Sent\ Items \
           +edwin-wordspeak.org/INBOX.Lists \
           +edwin-wordspeak.org/INBOX.OpenBSD \
+          +edwin-wordspeak.org/INBOX.Projects \
           +edwin-wordspeak.org/INBOX.Junk\ Mail \
           +edwin-wordspeak.org/INBOX.IsSpam \
-          +edwin-wordspeak.org/INBOX.NotSpam \
           ~/.mutt_storage/cache/Search \
           +edwin-wordspeak.org/INBOX.Archive \
           +edwin-wordspeak.org/INBOX.Humour \
