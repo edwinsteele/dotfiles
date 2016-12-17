@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/esteele/Code/dotfiles'
-let g:netrw_dirhist_2='/Users/esteele/Code/setup-scripts/ansible/openbsd'
-let g:netrw_dirhist_3='/Users/esteele/.pyenv'
