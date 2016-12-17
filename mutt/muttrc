@@ -35,7 +35,7 @@ color sidebar_new yellow default
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
-set status_format = "${HOME}/.mutt/mutt_postponed_status_format.sh '───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───( _ outbound messages queued )───%>─%?p?( %p postponed )?───'|"
+set status_format = "${HOME}/.mutt/mutt_postponed_status_format.sh '---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]---( _ outbound messages queued )---%>-%?p?( %p postponed )?---'|"
 
 # Header Options -------------------------------------
 ignore *                                # ignore all headers
