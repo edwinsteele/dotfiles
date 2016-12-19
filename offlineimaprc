@@ -1,0 +1,23 @@
+[general]
+ui = blinkenlights
+accounts = Edwin
+fsync = False
+
+[Account Edwin]
+localrepository = Edwin-Local
+remoterepository = Edwin-Remote
+status_backend = sqlite
+
+[Repository Edwin-Local]
+type = Maildir
+localfolders = ~/.mail/edwin-wordspeak.org
+
+[Repository Edwin-Remote]
+type = IMAP
+remoteuser = edwin@wordspeak.org
+remotehost = mail.messagingengine.com
+remoteport = 993
+ssl = yes
+cert_fingerprint = bddc89dae48629898af13421d7844f806ca33943
+remotepassfile = ~/.offlineimap_edwin
+folderfilter = lambda folder: folder not in ["INBOX.Deleted Messages", "INBOX.Trash"]
