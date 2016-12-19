@@ -3,6 +3,5 @@ vim/bundle
 .DS_Store
 python_hue
 vim/.netrwhist
-offlineimaprc
 *.cert
 *.crt
