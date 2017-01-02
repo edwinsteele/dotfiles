@@ -44,7 +44,6 @@ Plugin 'majutsushi/tagbar'
 " HTML5 + inline SVG omnicomplete function, indent and syntax for Vim. Based
 " on the default htmlcomplete.vim.
 Plugin 'othree/html5.vim'
-Plugin 'skammer/vim-css-color'
 " Terraform stuff
 Plugin 'hashivim/vim-terraform'
 
@@ -92,6 +91,9 @@ autocmd BufRead,BufNewFile *.sql set syntax=sql
 set encoding=utf-8
 " Close auto-complete window when I'm done with it
 let g:ycm_autoclose_preview_window_after_completion=1
+" Use particular python version, not just what's in the current venv
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2.7'
+
 " Goto definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -129,5 +131,5 @@ set pastetoggle=<F2>
 let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
 
 " troubleshooting ycmd
-let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_log_level = 'debug'
