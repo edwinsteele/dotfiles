@@ -58,6 +58,7 @@ mailboxes +edwin-wordspeak.org/INBOX \
           +edwin-wordspeak.org/INBOX.Lists \
           +edwin-wordspeak.org/INBOX.OpenBSD \
           +edwin-wordspeak.org/INBOX.Projects \
+          +edwin-wordspeak.org/INBOX.Terraform \
           +edwin-wordspeak.org/INBOX.Junk\ Mail \
           +edwin-wordspeak.org/INBOX.IsSpam \
           ${HOME}/.mutt_storage/cache/Search \
