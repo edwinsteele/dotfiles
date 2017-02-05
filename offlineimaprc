@@ -20,4 +20,4 @@ remoteport = 993
 ssl = yes
 cert_fingerprint = bddc89dae48629898af13421d7844f806ca33943
 remotepassfile = ~/.offlineimap_edwin
-folderfilter = lambda folder: folder not in ["INBOX.Deleted Messages", "INBOX.Trash"]
+folderfilter = lambda folder: folder not in ["INBOX.Deleted Messages", "INBOX.Trash", "INBOX.NotSpam"]
