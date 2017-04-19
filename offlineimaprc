@@ -6,7 +6,6 @@ fsync = False
 [Account Edwin]
 localrepository = Edwin-Local
 remoterepository = Edwin-Remote
-status_backend = sqlite
 
 [Repository Edwin-Local]
 type = Maildir
