@@ -85,7 +85,7 @@ prompt_virtualenv() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment magenta black '%~'
+  prompt_segment 067 black '%~'
 }
 
 # Status:
