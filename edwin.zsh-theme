@@ -34,6 +34,7 @@ prompt_end() {
   fi
   echo -n "%{%f%}"
   CURRENT_BG=''
+	printf "\n $SEGMENT_SEPARATOR"
 }
 
 ### Prompt components
