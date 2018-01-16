@@ -33,17 +33,10 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 " Syntax check on each save
 Plugin 'scrooloose/syntastic'
-" PEP8 checking - check with F7
-Plugin 'nvie/vim-flake8'
 " Zenburn colour scheme
 Plugin 'jnurmine/Zenburn'
 " Airline... not powerline
 Plugin 'bling/vim-airline'
-" Tagbar
-Plugin 'majutsushi/tagbar'
-" HTML5 + inline SVG omnicomplete function, indent and syntax for Vim. Based
-" on the default htmlcomplete.vim.
-Plugin 'othree/html5.vim'
 " Terraform stuff
 Plugin 'hashivim/vim-terraform'
 
@@ -78,6 +71,8 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent |
 
 autocmd BufRead,BufNewFile *.yml syntax on
 autocmd BufRead,BufNewFile *.yml set syntax=yaml
@@ -89,13 +84,18 @@ autocmd BufRead,BufNewFile *.yml set expandtab
 autocmd BufRead,BufNewFile *.sql set syntax=sql
 
 set encoding=utf-8
+
+" YouCompleteMe
 " Close auto-complete window when I'm done with it
 let g:ycm_autoclose_preview_window_after_completion=1
 " Use particular python version, not just what's in the current venv
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python2.7'
-
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3.6'
 " Goto definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" troubleshooting
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_log_level = 'debug'
+"let g:ycm_server_keep_logfiles = 1
 
 set hlsearch
 set ruler
@@ -120,16 +120,19 @@ else
 	" Use the regular ctags
 	let g:tagbar_ctags_bin='/usr/bin/ctags'
 endif
-" Make it easy to toggle the tagbar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_width=40
-let g:tagbar_left=1
 " Make it easy to paste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
+" Syntastic, including recommended settings from
+" https://github.com/vim-syntastic/syntastic#settings  
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
-
-" troubleshooting ycmd
-"let g:ycm_server_use_vim_stdout = 1
-"let g:ycm_server_log_level = 'debug'
+let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
