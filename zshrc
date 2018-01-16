@@ -21,9 +21,6 @@ pjson () {
         python -c "import json; import sys; print json.dumps(json.loads(sys.stdin.read()), sort_keys = True, indent = 2)"
 }
 
-# Use MacVim in console mode
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"  # Avoid system vi when I don't type the "m"
 rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
 ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
 yhighlight() { gsed 's,\('$1'\),\x1B[43m\1\x1B[0m,' }
@@ -60,6 +57,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Oh dear, why wasn't allowing comments set to be the default?
 setopt interactivecomments
-
-# added by travis gem
-[ -f /Users/esteele/.travis/travis.sh ] && source /Users/esteele/.travis/travis.sh
