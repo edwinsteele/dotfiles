@@ -25,6 +25,8 @@ rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
 ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
 yhighlight() { gsed 's,\('$1'\),\x1B[43m\1\x1B[0m,' }
 
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
 export LANG=en_AU.UTF-8
 
 source ~/.profile_private
