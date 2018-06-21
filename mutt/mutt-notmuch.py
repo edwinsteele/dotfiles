@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 mutt-notmuch-py
 
@@ -71,7 +71,7 @@ def main(dest_box):
             else:
                 data[sha].append(f)
         except IOError:
-            print 'File %s does not exist' % f
+            print('File %s does not exist' % f)
 
     for sha in data.keys():
         if is_gmail and len(data[sha]) > 1:
