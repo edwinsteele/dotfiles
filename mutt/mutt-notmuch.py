@@ -56,8 +56,8 @@ def main(dest_box):
 
     empty_dir(dest_box)
 
-    # For small mailboxes like mine, ack or ag (silver-surfer) is fine.
-    files = command('ack -l %s ~/.mail' % query).split('\n')
+    # For small mailboxes like mine, ack or ag (silver-searcher) is fine.
+    files = command('ag -l %s ~/.mail' % query).split('\n')
     files = filter(None, files)
 
     data = {}
