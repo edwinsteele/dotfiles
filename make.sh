@@ -1,31 +1,15 @@
-#!/bin/sh
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+#!/bin/sh -x
 
-########## Variables
+DOTFILES_DIR=~/Code/dotfiles
 
-dir=~/Code/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vim tmux.conf vimrc vimrc_python gitconfig zshrc bashrc pylintrc offlineimaprc urlview notmuch-config"
+#files="vim tmux.conf vimrc vimrc_python gitconfig zshrc bashrc pylintrc offlineimaprc urlview notmuch-config"
 
-##########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
-done
+ln -sf $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
+ln -sf $DOTFILES_DIR/vim $HOME/.vim
+ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
+ln -sf $DOTFILES_DIR/gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES_DIR/alacritty.yml $HOME/.alacritty.yml
+ln -sf $DOTFILES_DIR/zshrc $HOME/.zshrc
+# If oh-my-zsh is not installed, grab the installer from https://github.com/robbyrussell/oh-my-zsh then this should work
+ln -sf $DOTFILES_DIR/edwin.zsh-theme $HOME/.oh-my-zsh/themes/
