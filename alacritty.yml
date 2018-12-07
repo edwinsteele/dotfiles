@@ -1,13 +1,10 @@
-env:
-  TERM: screen-256color
-
 window:
-  # Full screen on 15" macbook pro
+  # Full screen on 13" macbook pro
   dimensions:
-    columns: 239
+    columns: 273
     lines: 58
 
-  decorations: true
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 4
@@ -66,6 +63,11 @@ colors:
     cyan:    '0x66cccc'
     white:   '0xdddddd'
 
+mouse:
+  hide_when_typing: false
+  url:
+    launcher: open
+
 visual_bell:
   duration: 0
 
@@ -74,8 +76,6 @@ background_opacity: 1.0
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-hide_cursor_when_typing: false
 
 key_bindings:
   - { key: V,        mods: Command, action: Paste                        }
