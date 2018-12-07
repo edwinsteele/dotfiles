@@ -1,8 +1,11 @@
 [user]
 	name = Edwin Steele
-	email = edwin-lists@wordspeak.org
+	email = edwin@wordspeak.org
 [core]
 	autocrlf = input
-	editor = /usr/bin/vim
+	editor = /Applications/MacVim.app/Contents/bin/vim
+	excludesfile = /Users/esteele/.gitignore_global
 [push]
 	default = current
+[color]
+	ui = auto
