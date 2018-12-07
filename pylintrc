@@ -318,7 +318,12 @@ function-naming-style=snake_case
 good-names=f,
            r,
            fd,
-           _
+           _,
+           readme,
+           history,
+           requirements,
+           setup_requirements,
+           test_requirements,
 
 # Include a hint for the correct naming format with invalid-name
 include-naming-hint=no
