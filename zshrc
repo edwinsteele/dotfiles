@@ -1,25 +1,15 @@
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
-
 # Start ssh-agent if it is not already running and set up ssh-agent variables
-if [ "x" = "x`ps -x -u ${USER} | egrep '[s]sh-agent'`" ] ; then 
+if [ -z "$(pgrep ssh-agent)" ] ; then
+  echo "Starting SSH agent"
   # no ssh-agent running"
-  ssh-agent | sed -e "/^echo/d" > ${HOME}/bin/agent-env
+  ssh-agent -s > ${HOME}/bin/agent-env
 fi
 source ${HOME}/bin/agent-env
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
-# Put at the end of the path so we don't find "python" or other standard stuff
-export PATH="$PATH:/Users/esteele/.virtualenvs/standard-shell/bin/"
-
-source /Users/esteele/.virtualenvs/venv_profile_additions_2.7.sh
-
-pjson () {
-        python -c "import json; import sys; print json.dumps(json.loads(sys.stdin.read()), sort_keys = True, indent = 2)"
-}
+export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
+# pip install --user goes here on OSX
+export PATH="${PATH}:${HOME}/Library/Python/2.7/bin"
 
 rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
 ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
