@@ -8,8 +8,8 @@ fi
 source ${HOME}/bin/agent-env
 
 export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
-# pip install --user goes here on OSX
-export PATH="${PATH}:${HOME}/Library/Python/2.7/bin"
+# pip3 install --user goes here on OSX
+export PATH="${PATH}:${HOME}/Library/Python/3.7/bin"
 
 rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
 ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
