@@ -116,3 +116,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" From 8.1.360 the xdiff code from git has been merged into Vim
+"  so we can use extra nice options
+set diffopt+=algorithm:patience,indent-heuristic
