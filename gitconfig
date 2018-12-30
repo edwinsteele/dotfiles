@@ -3,7 +3,7 @@
 	email = edwin@wordspeak.org
 [core]
 	autocrlf = input
-	editor = /Applications/MacVim.app/Contents/bin/vim
+	editor = "vim"
 	excludesfile = /Users/esteele/.gitignore_global
 [push]
 	default = current
