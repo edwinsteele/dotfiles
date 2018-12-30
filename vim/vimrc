@@ -23,18 +23,13 @@ call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
 " markdown bundle
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " python folding
 Plugin 'tmhedberg/SimpylFold'
 " PEP8 friendly auto-indentation
 Plugin 'vim-scripts/indentpython.vim'
-" Auto-complete
-Bundle 'Valloric/YouCompleteMe'
 " Syntax check on each save
 Plugin 'scrooloose/syntastic'
-" Zenburn colour scheme
-Plugin 'jnurmine/Zenburn'
 " Airline... not powerline
 Plugin 'bling/vim-airline'
 " Terraform stuff
@@ -44,8 +39,6 @@ Plugin 'hashivim/vim-terraform'
 call vundle#end()
 filetype plugin indent on     			" vundle: required!
 " Vundle end
-
-" colorscheme zenburn
 
 " Enable folding
 set foldmethod=indent
@@ -87,11 +80,11 @@ set encoding=utf-8
 
 " YouCompleteMe
 " Close auto-complete window when I'm done with it
-let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_autoclose_preview_window_after_completion=1
 " Use particular python version, not just what's in the current venv
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3.6'
+"let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3.6'
 " Goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " troubleshooting
 "let g:ycm_server_use_vim_stdout = 1
 "let g:ycm_server_log_level = 'debug'
@@ -99,6 +92,9 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 set hlsearch
 set ruler
+
+" lots of people talk about perf improvements from enabling this
+set lazyredraw
 
 " Show line numbers, with custom colouring
 set nu
@@ -131,8 +127,9 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
 let g:syntastic_python_checkers = ['python', 'pylint']
-let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
+"let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
 let g:syntastic_always_populate_loc_list = 1
+" Close error window with :lclose
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
