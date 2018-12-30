@@ -22,8 +22,10 @@ call vundle#begin()
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 Bundle 'gmarik/Vundle.vim'
 
-" markdown bundle
+" Markdown syntax highlighting
 Plugin 'plasticboy/vim-markdown'
+" Terraform syntax highlighting
+Plugin 'hashivim/vim-terraform'
 " python folding
 Plugin 'tmhedberg/SimpylFold'
 " PEP8 friendly auto-indentation
@@ -32,8 +34,6 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 " Airline... not powerline
 Plugin 'bling/vim-airline'
-" Terraform stuff
-Plugin 'hashivim/vim-terraform'
 
 
 call vundle#end()
@@ -77,18 +77,6 @@ autocmd BufRead,BufNewFile *.yml set expandtab
 autocmd BufRead,BufNewFile *.sql set syntax=sql
 
 set encoding=utf-8
-
-" YouCompleteMe
-" Close auto-complete window when I'm done with it
-"let g:ycm_autoclose_preview_window_after_completion=1
-" Use particular python version, not just what's in the current venv
-"let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3.6'
-" Goto definition
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" troubleshooting
-"let g:ycm_server_use_vim_stdout = 1
-"let g:ycm_server_log_level = 'debug'
-"let g:ycm_server_keep_logfiles = 1
 
 set hlsearch
 set ruler
