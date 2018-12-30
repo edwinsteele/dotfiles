@@ -46,19 +46,20 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" PEP8
+syntax on
+
+" define BadWhitespace before using in a match
+highlight BadWhitespace ctermfg=red ctermbg=red cterm=bold
+
+" Python, conforming to PEP8
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
+    \ set textwidth=79
+au BufNewFile,BufRead *.py match BadWhitespace /\s\+$/
+let python_highlight_all=1
 
-" define BadWhitespace before using in a match
-highlight BadWhitespace ctermfg=red ctermbg=red cterm=bold
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
@@ -67,14 +68,11 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set expandtab |
     \ set autoindent |
 
-autocmd BufRead,BufNewFile *.yml syntax on
-autocmd BufRead,BufNewFile *.yml set syntax=yaml
-autocmd BufRead,BufNewFile *.yml set nosmartindent
-autocmd BufRead,BufNewFile *.yml set noautoindent
-autocmd BufRead,BufNewFile *.yml set inde=""
-autocmd BufRead,BufNewFile *.yml set expandtab
-
-autocmd BufRead,BufNewFile *.sql set syntax=sql
+autocmd BufRead,BufNewFile *.yml
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
 
 set encoding=utf-8
 
@@ -88,8 +86,6 @@ set lazyredraw
 set nu
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-let python_highlight_all=1
-syntax on
 
 " Always show statusline, even without a split
 set laststatus=2
@@ -113,7 +109,6 @@ set pastetoggle=<F2>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.0.0/bin/tidy'
 let g:syntastic_python_checkers = ['python', 'pylint']
 "let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
 let g:syntastic_always_populate_loc_list = 1
