@@ -4,6 +4,7 @@ export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:
 rhighlight() { gsed 's,\('$1'\),\x1B[41m\1\x1B[0m,' }
 ghighlight() { gsed 's,\('$1'\),\x1B[42m\1\x1B[0m,' }
 yhighlight() { gsed 's,\('$1'\),\x1B[43m\1\x1B[0m,' }
+allcolours() { msgcat --color=test; for COLOR in {1..255}; do echo -en "\e[38;5;${COLOR}m${COLOR} "; done; echo; }
 
 export LANG=en_AU.UTF-8
 
