@@ -26,15 +26,9 @@ Bundle 'gmarik/Vundle.vim'
 Plugin 'plasticboy/vim-markdown'
 " Terraform syntax highlighting
 Plugin 'hashivim/vim-terraform'
-" python folding
-Plugin 'tmhedberg/SimpylFold'
-" PEP8 friendly auto-indentation
-Plugin 'vim-scripts/indentpython.vim'
-" Syntax check on each save
-Plugin 'scrooloose/syntastic'
 " Airline... not powerline
 Plugin 'bling/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 
 call vundle#end()
